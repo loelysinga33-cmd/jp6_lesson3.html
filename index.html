@@ -105,6 +105,13 @@ h1 em{color:var(--purple)}
 .exp .t{flex:1;min-width:0}
 .exp .j{font-family:'Noto Sans JP';font-weight:700;font-size:16px;display:block;line-height:1.35}
 .exp .k{font-size:13px;color:var(--muted)}
+.qmode{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.qmode button{border:2px solid #c9d1ee;background:#fff;border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--navy)}
+.qmode button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.qhint{font-size:13px;color:var(--muted);margin-bottom:8px}
+.exp.qx .k{display:block}
+.exp .jq{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:17px;color:var(--pink);margin:2px 0}
+.exp .jq.hide{color:var(--muted);font-family:inherit;font-weight:400;font-size:14px;background:#fff;border:1px dashed #c9d1ee;border-radius:8px;padding:2px 8px;cursor:pointer;display:inline-block}
 .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media (max-width:700px){.plan{grid-template-columns:1fr}}
 .pp{border:2px solid #dccbf3;border-radius:14px;padding:10px;background:#fff}
@@ -156,7 +163,10 @@ h1 em{color:var(--purple)}
 
 <section class="step s-orange">
   <div class="step-h"><div class="num">1</div><div><h2>묻고 답하는 방법 알기</h2><p>질문은 또박또박, 대답은 가이드처럼 자신 있게!</p></div></div>
-  <div class="exp-h" style="color:var(--navy)">❓ 이렇게 질문해요 (내가 짝에게)</div><div class="exps" id="expQ"></div>
+  <div class="exp-h" style="color:var(--navy)">❓ 이렇게 질문해요 (내가 짝에게)</div>
+  <div class="qmode" id="qmode"><button data-m="all" class="on">👀 한국어+일본어 보기</button><button data-m="quiz">🙈 일본어 가리고 연습</button></div>
+  <div class="qhint" id="qhint">🔊를 눌러 듣고 따라 말해 봐요. 한국어로도, 일본어로도 질문할 수 있어요!</div>
+  <div class="exps" id="expQ"></div>
 </section>
 
 <section class="step s-purple">
@@ -267,11 +277,23 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo();});
 const store=makeStore('jp6_l3',{info:{},yours:['','',''],qs:{},checks:{}});
 const S=()=>store.s;
 const QS=[['여기는 어디예요?'],['어디에 있어요?'],['어떤 곳이에요?'],['무엇이 유명해요?'],['무엇이 맛있어요?'],['언제 가면 좋아요?'],['왜 이곳을 소개하고 싶어요?']];
-const EXP_Q=[['어디에 있어요?','위치를 물어봐요'],['어떤 곳이에요?','특징을 물어봐요'],['무엇이 유명해요?','볼거리를 물어봐요'],['무엇이 맛있어요?','먹거리를 물어봐요'],['언제 가면 좋아요?','추천 계절을 물어봐요'],['왜 이곳을 소개하고 싶어요?','고른 이유를 물어봐요']];
+const EXP_Q=[
+ ['어디에 있어요?','どこに ありますか。','위치를 물어봐요'],
+ ['어떤 곳이에요?','どんな ところですか。','특징을 물어봐요'],
+ ['무엇이 유명해요?','なにが ゆうめいですか。','볼거리를 물어봐요'],
+ ['무엇이 맛있어요?','なにが おいしいですか。','먹거리를 물어봐요'],
+ ['언제 가면 좋아요?','いつが いいですか。','추천 계절을 물어봐요'],
+ ['왜 이곳을 소개하고 싶어요?','どうして ここを しょうかいしたいですか。','고른 이유를 물어봐요']];
+let qMode='all';
 function renderExp(){
-  const row=(cls)=>([t,k])=>`<div class="exp ${cls}"><div class="t"><span class="j" style="font-family:inherit">${t}</span><span class="k">${k}</span></div></div>`;
-  document.getElementById('expQ').innerHTML=EXP_Q.map(row('')).join('');
+  document.getElementById('expQ').innerHTML=EXP_Q.map(([ko,ja,k],i)=>`<div class="exp qx"><div class="t">
+     <span class="j" style="font-family:inherit">${i+1}. ${ko}</span>
+     <span class="jq ${qMode==='quiz'?'hide':''}" data-i="${i}">${qMode==='quiz'?'👆 눌러서 일본어 확인':ja}</span>
+     <span class="k">${k}</span></div><button class="say" data-say="${ja}" title="일본어 듣기">🔊</button></div>`).join('');
+  document.querySelectorAll('.jq.hide').forEach(el=>el.onclick=()=>{el.textContent=EXP_Q[+el.dataset.i][1];el.classList.remove('hide');});
+  document.getElementById('qhint').textContent=qMode==='quiz'?'한국어 질문을 보고 일본어로 말해 본 뒤, 눌러서 정답을 확인해요. 🔊로 발음도 들어 봐요!':'🔊를 눌러 듣고 따라 말해 봐요. 한국어로도, 일본어로도 질문할 수 있어요!';
 }
+document.querySelectorAll('#qmode button').forEach(b=>b.onclick=()=>{qMode=b.dataset.m;document.querySelectorAll('#qmode button').forEach(x=>x.classList.toggle('on',x===b));renderExp();});
 function renderPicks(){const box=document.getElementById('picks');box.innerHTML='';
   S().yours.forEach((v,i)=>{const used=S().yours.filter((x,j)=>x&&j!==i);const s=document.createElement('select');
     s.innerHTML=`<option value="">— 짝 관광지 ${i+1} —</option>`+PLACES.map(p=>`<option value="${p.id}" ${v===p.id?'selected':''} ${used.includes(p.id)?'disabled':''}>${p.emo} ${p.ja} (${p.ko})</option>`).join('');
