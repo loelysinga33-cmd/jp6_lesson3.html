@@ -89,6 +89,9 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--pink);ba
 .vinfo p{margin:6px 0}
 .vlinks{font-size:13px}
 .vlinks a{color:var(--navy)}
+.whobar{margin-top:10px;border-radius:12px;padding:8px 12px;font-size:14px}
+.whobar.on{background:var(--green-l);color:#23733b}
+.whobar.off{background:#fff6d6;color:#8a5a00}
 
 body{background-color:#fbf8ff}
 header.hero{background:linear-gradient(135deg,#efe6ff,#fff 55%,#ffe6ef)}
@@ -108,13 +111,44 @@ h1 em{color:var(--purple)}
 .qmode{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
 .qmode button{border:2px solid #c9d1ee;background:#fff;border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--navy)}
 .qmode button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.aizu{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:700px){.aizu{grid-template-columns:1fr 1fr}}
+.az{position:relative;border-radius:16px;padding:12px 12px 14px;text-align:center;background:var(--bg2);border:2px solid var(--bd)}
+.az .tg{display:inline-block;font-family:'Jua';font-size:14px;background:#fff;border-radius:999px;padding:1px 10px;color:var(--fc)}
+.az .ja{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(18px,3vw,24px);white-space:nowrap;color:var(--fc);margin:6px 0 0;line-height:1.3}
+.az .ko{font-family:'Jua';font-size:17px}
+.az .down{font-size:.8em;margin-left:2px;color:var(--red);font-weight:900;vertical-align:-.1em}
+.az .tone{word-break:keep-all;display:inline-block;font-size:12px;font-weight:700;color:var(--red);background:#fff;border-radius:999px;padding:0 8px;margin-top:2px}
+.az .when{word-break:keep-all;font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.az .say{position:absolute;top:8px;right:8px;width:30px;height:30px;font-size:14px}
+.az1{--bg2:#e6f5ea;--bd:#c4e6cd;--fc:#23733b}.az2{--bg2:#e7f0fb;--bd:#c3d6f0;--fc:#2c5aa0}.az3{--bg2:#fde4ee;--bd:#f7cbdb;--fc:#c13f6e}.az4{--bg2:#fff1dc;--bd:#f6d7a8;--fc:#b8661a}
+.acgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media (max-width:700px){.acgrid{grid-template-columns:repeat(2,1fr)}}
+.acc{border-radius:14px;padding:10px 8px;text-align:center;background:var(--bg2);border:2px solid var(--bd)}
+.acc .tg{display:inline-block;font-family:'Jua';font-size:13px;background:#fff;border-radius:999px;padding:0 8px;color:var(--fc)}
+.acc .ja{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:18px;color:var(--fc);margin-top:4px;white-space:nowrap}
+.acc .ko{font-size:13px;color:var(--muted)}
+.acc .cnt{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.acc .cnt b{font-family:'Jua';font-size:26px;min-width:28px;color:var(--ink)}
+.acc .cnt button{width:36px;height:36px;border-radius:50%;border:2px solid var(--bd);background:#fff;font-size:20px;cursor:pointer;color:var(--fc);line-height:1}
+.acc .cnt button.plus{background:var(--fc);color:#fff;border-color:var(--fc)}
+.az5{--bg2:#f1edfb;--bd:#dccbf3;--fc:#6a3fa6}
+.acres{margin-top:12px;border-radius:12px;padding:10px 12px;font-size:15px}
+.acres.ok{background:var(--green-l);color:#23733b}.acres.wait{background:#f3f3f7;color:var(--muted)}
+.acsum{margin-top:10px;font-size:14px;background:var(--orange-l);border-radius:10px;padding:8px 10px}
+.jq:not(.hide),.pja{max-width:100%;overflow:hidden}
+.pp,.exp,.exp .t,.pp label>span{min-width:0}
+.pr{display:block;font-size:12px;color:#7a6f86;line-height:1.35;letter-spacing:-.01em}
+.pr.hid{display:none}
+.az .pr,.acc .pr{font-size:13px;margin-top:-2px}
+@media (max-width:480px){.az .tone{font-size:11px;padding:0 6px}}
 .qhint{font-size:13px;color:var(--muted);margin-bottom:8px}
 .exp.qx .k{display:block}
 .exp .jq{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:17px;color:var(--pink);margin:2px 0}
 .exp .jq.hide{color:var(--muted);font-family:inherit;font-weight:400;font-size:14px;background:#fff;border:1px dashed #c9d1ee;border-radius:8px;padding:2px 8px;cursor:pointer;display:inline-block}
-.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media (max-width:700px){.plan{grid-template-columns:1fr}}
-.pp{border:2px solid #dccbf3;border-radius:14px;padding:10px;background:#fff}
+.plan{display:grid;grid-template-columns:1fr;gap:10px}
+.pp{border:2px solid #dccbf3;border-radius:14px;padding:10px 12px;background:#fff;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2px 14px;align-items:start}
+.pp>.hd,.pp>div:only-child{grid-column:1/-1}
 .pp .hd{display:flex;gap:8px;align-items:center}
 .pp .hd .e{font-size:26px}
 .pp .hd .jp{font-weight:700;font-size:17px;line-height:1.2}
@@ -122,6 +156,10 @@ h1 em{color:var(--purple)}
 .pp label{display:flex;gap:6px;align-items:flex-start;font-size:14px;margin-top:6px;cursor:pointer}
 .pp label input{margin-top:5px}
 .pp label .jp{font-size:14px}
+.pja{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:13px;color:var(--pink);line-height:1.4}
+.basicq{background:var(--purple-l);border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:14px}
+.basicq .bq{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:6px 10px;margin:6px 8px 0 0}
+.basicq .say{width:28px;height:28px;font-size:13px}
 .rule{display:inline-block;background:#ffe3e3;color:var(--red);font-weight:700;border-radius:999px;padding:4px 12px;font-size:14px}
 .rec{background:var(--purple-l);border-radius:16px;padding:14px}
 .steps-pad{margin:10px 0 0;padding-left:22px;font-size:14px}
@@ -157,34 +195,52 @@ h1 em{color:var(--purple)}
     <div><label class="f" for="name">이름</label><input type="text" id="name" placeholder="이름" data-save></div>
   </div>
   <label class="f" for="pname">짝 이름</label><input type="text" id="pname" placeholder="짝의 이름" data-save>
-  <div class="load">📂 <span style="flex:1">1차시를 이 태블릿에서 했다면 짝의 관광지를 불러올 수 있어요.</span><button class="btn navy sm" id="loadBtn">1차시 불러오기</button></div>
+  <div class="load">📂 <span style="flex:1">같은 태블릿에서 같은 반·번호로 1차시를 했다면 짝의 관광지를 불러올 수 있어요.</span><button class="btn navy sm" id="loadBtn">1차시 불러오기</button></div>
   <label class="f">🙋 짝이 소개할 관광지 (내가 질문할 곳)</label><div class="picks" id="picks"></div>
 </section>
 
 <section class="step s-orange">
-  <div class="step-h"><div class="num">1</div><div><h2>묻고 답하는 방법 알기</h2><p>질문은 또박또박, 대답은 가이드처럼 자신 있게!</p></div></div>
-  <div class="exp-h" style="color:var(--navy)">❓ 이렇게 질문해요 (내가 짝에게)</div>
+  <div class="step-h"><div class="num">1</div><div><h2>이렇게 질문해요</h2><p>질문은 또박또박, 대답은 가이드처럼 자신 있게!</p></div></div>
   <div class="qmode" id="qmode"><button data-m="all" class="on">👀 한국어+일본어 보기</button><button data-m="quiz">🙈 일본어 가리고 연습</button></div>
   <div class="qhint" id="qhint">🔊를 눌러 듣고 따라 말해 봐요. 한국어로도, 일본어로도 질문할 수 있어요!</div>
   <div class="exps" id="expQ"></div>
 </section>
 
+<section class="step s-green">
+  <div class="step-h"><div class="num">2</div><div><h2>이렇게 들어요 <span class="jp" style="font-size:17px;color:var(--green)">あいづち</span></h2><p>📖 교과서 103쪽 · 일본 사람과 말할 때는 맞장구가 필요해요!</p></div></div>
+  <div class="hint" style="background:var(--green-l)">일본 사람은 대화할 때 <b>맞장구</b>를 자주 쳐요. 맞장구는 <b>"당신의 이야기를 잘 듣고 있어요"</b>라는 표시예요.
+    맞장구가 없으면 상대방은 불안해할 수도 있어요. 짝이 설명할 때 <b>고개를 끄덕이며</b> 맞장구를 쳐 주세요!</div>
+  <div class="aizu">
+    <div class="az az1"><span class="tg">👂 경청</span><div class="ja">うん。</div><div class="pr">[응]</div><div class="ko">응.</div><div class="when">이야기를 듣는 중간중간에</div><button class="say" data-say="うん。" title="듣기">🔊</button></div>
+    <div class="az az2"><span class="tg">🤝 동의·공감</span><div class="ja">そうそう。</div><div class="pr">[소-소-]</div><div class="ko">그래, 맞아.</div><div class="when">"맞아, 나도 그렇게 생각해"<br>라고 할 때</div><button class="say" data-say="そうそう。" title="듣기">🔊</button></div>
+    <div class="az az3"><span class="tg">💡 이해</span><div class="ja">そうですか<span class="down">↘</span></div><div class="pr">[소-데스카]</div><div class="ko">그래요?</div><div class="tone">⤵ 끝을 <b>내려서</b> 말해요</div><div class="when">"아, 그렇군요" 하고<br>알아들었을 때</div><button class="say" data-say="そうですか。" title="듣기">🔊</button></div>
+    <div class="az az4"><span class="tg">😲 놀람</span><div class="ja">へえ～！</div><div class="pr">[헤-!]</div><div class="ko">우와!</div><div class="when">신기하거나 놀라운<br>이야기를 들었을 때</div><button class="say" data-say="へえー！" title="듣기">🔊</button></div>
+  </div>
+  <div class="hint" style="background:#fff6d6;margin-top:12px">🎙️ <b style="color:#a3741a">녹음할 때 미션!</b> 짝이 가이드가 되어 설명하는 동안, 위의 맞장구를 <b>2번 이상</b> 넣어 보세요.</div>
+</section>
+
 <section class="step s-purple">
-  <div class="step-h"><div class="num">2</div><div><h2>질문 계획 세우기</h2><p>짝의 관광지마다 물어볼 질문을 <b>2개씩</b> 골라요. ('여기는 어디예요?', '어디에 있어요?'는 기본으로 물어봐요)</p></div></div>
+  <div class="step-h"><div class="num">3</div><div><h2>질문 계획 세우기</h2><p>짝의 관광지마다 물어볼 질문을 <b>2개씩</b> 골라요. </p></div></div>
+  <div class="basicq">⭐ <b>기본 질문</b> (모든 관광지에서 꼭 물어봐요)<div class="bq"><span>어디에 있어요?<span class="pja">どこに　ありますか。</span><span class="pr">[도코니 아리마스카]</span></span><button class="say" data-say="どこに　ありますか。">🔊</button></div><div class="bq"><span>어떤 곳이에요?<span class="pja">どんな　ところですか。</span><span class="pr">[돈나 토코로데스카]</span></span><button class="say" data-say="どんな　ところですか。">🔊</button></div></div>
   <div class="plan" id="plan"></div>
 </section>
 
 <section class="step s-pink">
-  <div class="step-h"><div class="num">3</div><div><h2>녹음하고 패들렛에 올리기</h2><p>패들렛의 녹음 기능으로 녹음해요. 역할을 바꿔 두 번! (각 1~2분)</p></div></div>
+  <div class="step-h"><div class="num">4</div><div><h2>녹음하고 패들렛에 올리기</h2><p>패들렛의 녹음 기능으로 녹음해요. (1~2분)</p></div></div>
   <span class="rule">📵 대답하는 사람(가이드)은 화면·자료를 보지 않아요!</span>
   <div class="rec" style="margin-top:10px">
     <ol class="steps-pad" style="margin-top:0">
       <li>패들렛에서 <b>자신의 이름 칸</b>에서 ➕ → <b>🎤 녹음</b>을 눌러요.</li>
-      <li>내가 질문하고 짝이 가이드가 되어 대답하는 모습을 녹음해요.</li>
-      <li>역할을 바꿔서 한 번 더 녹음해요.</li>
+      <li>내가 가이드가 되어 대답하는 모습을 녹음해요.</li>
       <li>녹음을 들어 보고 <b>게시</b>를 눌러 올려요.</li>
     </ol>
   </div>
+</section>
+
+<section class="step s-orange">
+  <div class="step-h"><div class="num">5</div><div><h2>맞장구 체크하기</h2><p>패들렛에서 녹음을 다시 들으며, <b>내가 듣는 사람일 때(짝의 녹음 파일)</b> 쓴 맞장구를 나올 때마다 눌러 세어 봐요.</p></div></div>
+  <div class="acgrid" id="acgrid"></div>
+  <div class="acres" id="acres"></div>
 </section>
 
 <section class="step s-navy">
@@ -232,15 +288,53 @@ const embedURL=p=>`https://www.youtube-nocookie.com/embed/${p.vid}?start=0&end=$
 const watchURL=p=>`https://www.youtube.com/watch?v=${p.vid}`;
 const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2000);}
+/* ===== 학생별 저장 =====
+   반·번호를 입력하면 그 학생의 기록만 따로 저장해요.
+   지금 쓰는 학생 정보는 이 탭에만 기억(탭을 닫으면 초기화)되어,
+   같은 태블릿을 다음 반 학생이 써도 앞 학생의 기록이 보이지 않아요. */
+const WHO_KEY='jp6_who';
+const normWho=(c,n)=>{c=String(c||'').replace(/\s/g,'').replace(/반$/,'');n=String(n||'').replace(/\D/g,'').replace(/^0+/,'');return c&&n?`${c}-${n}`:'';};
+function getWho(){try{return sessionStorage.getItem(WHO_KEY)||'';}catch(e){return '';}}
+function setWho(w){try{w?sessionStorage.setItem(WHO_KEY,w):sessionStorage.removeItem(WHO_KEY);}catch(e){}}
 function makeStore(key,init){
-  let state=init;
-  try{const s=JSON.parse(localStorage.getItem(key)||'null');if(s)state=Object.assign(init,s);}catch(e){}
+  const who=getWho();const k=who?`${key}__${who}`:null;
+  let state=JSON.parse(JSON.stringify(init));
+  if(k){try{const s=JSON.parse(localStorage.getItem(k)||'null')||legacyFor(key,who);if(s)state=Object.assign(state,s);}catch(e){}}
   let t;
-  return {get s(){return state},save(){clearTimeout(t);t=setTimeout(()=>{try{localStorage.setItem(key,JSON.stringify(state));const el=document.getElementById('saved');if(el)el.textContent='✔ 자동 저장됨 · '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});}catch(e){}},300);},
-          clear(){try{localStorage.removeItem(key);}catch(e){}}};
+  return {key,who,get s(){return state},
+    save(){const el=document.getElementById('saved');
+      if(!k){if(el)el.textContent='💡 반과 번호를 먼저 입력해야 내 기록이 저장돼요.';return;}
+      clearTimeout(t);t=setTimeout(()=>{try{localStorage.setItem(k,JSON.stringify(state));if(el)el.textContent='✔ 자동 저장됨 · '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});}catch(e){}},300);},
+    clear(){if(k){try{localStorage.removeItem(k);}catch(e){}}setWho('');}};
 }
-function readOther(key){try{return JSON.parse(localStorage.getItem(key)||'null');}catch(e){return null;}}
-function bindBasics(store){document.querySelectorAll('[data-save]').forEach(el=>{el.value=store.s.info[el.id]||'';el.addEventListener('input',()=>{store.s.info[el.id]=el.value;store.save();});});}
+/* 예전 방식(학생 구분 없이 저장)으로 남은 기록 중 반·번호가 같은 것만 이어받기 */
+function legacyFor(key,w){try{const o=JSON.parse(localStorage.getItem(key)||'null');if(o&&o.info&&normWho(o.info.cls,o.info.no)===w)return o;}catch(e){}return null;}
+function readOther(key){const w=getWho();if(!w)return null;try{const o=JSON.parse(localStorage.getItem(`${key}__${w}`)||'null');
+  if(o&&Object.keys(o).some(k=>k!=='info'))return o;return legacyFor(key,w)||o;}catch(e){return null;}}
+function switchStudent(store,w){
+  const k=`${store.key}__${w}`;let exists=false;try{exists=!!localStorage.getItem(k);}catch(e){}
+  if(!exists){const old=legacyFor(store.key,w);if(old){try{localStorage.setItem(k,JSON.stringify(old));}catch(e){}setWho(w);location.reload();return;}
+    const i=store.s.info||{};
+    const data=store.who?{info:{cls:i.cls||'',no:i.no||'',name:i.name||''}}:store.s;   /* 처음 입력한 학생이면 지금까지 쓴 내용을 그대로 이어서 저장 */
+    try{localStorage.setItem(k,JSON.stringify(data));}catch(e){}}
+  setWho(w);location.reload();
+}
+function bindBasics(store){
+  if(store.who&&!(store.s.info.cls&&store.s.info.no)){ /* 이 차시 기록이 처음이면 반·번호·이름을 채워 줘요 */
+    const w=store.who,j=w.lastIndexOf('-');store.s.info.cls=w.slice(0,j);store.s.info.no=w.slice(j+1);
+    if(!store.s.info.name){for(const k of ['jp6_l1','jp6_l2','jp6_l3','jp6_l4']){const o=readOther(k);if(o&&o.info&&o.info.name){store.s.info.name=o.info.name;break;}}}
+    store.save();}
+  document.querySelectorAll('[data-save]').forEach(el=>{el.value=store.s.info[el.id]||'';el.addEventListener('input',()=>{store.s.info[el.id]=el.value;store.save();});});
+  ['cls','no'].forEach(id=>{const el=document.getElementById(id);if(!el)return;
+    el.addEventListener('change',()=>{const w=normWho(store.s.info.cls,store.s.info.no);if(w&&w!==store.who)switchStudent(store,w);});});
+  const anchor=document.getElementById('no')&&document.getElementById('no').closest('.grid3');
+  if(anchor){const bar=document.createElement('div');bar.className='whobar '+(store.who?'on':'off');
+    const [c,n]=(store.who||'').split('-').length>2?[store.who.slice(0,store.who.lastIndexOf('-')),store.who.slice(store.who.lastIndexOf('-')+1)]:(store.who||'').split('-');
+    bar.innerHTML=store.who?`✅ <b>${esc(c)}반 ${esc(n)}번</b>의 기록으로 저장하고 있어요. 내 반·번호가 아니면 고쳐 쓰세요.`
+      :'💡 <b>반과 번호를 먼저 입력</b>하세요. 입력하면 내 기록만 따로 저장되고, 지난 시간 기록도 불러올 수 있어요.';
+    anchor.insertAdjacentElement('afterend',bar);}
+  if(!store.who){const el=document.getElementById('saved');if(el)el.textContent='💡 반과 번호를 먼저 입력해야 내 기록이 저장돼요.';}
+}
 const info=(store,id)=>(store.s.info[id]||'').trim();
 async function saveImage(el,fname){
   if(typeof html2canvas==='undefined'){toast('이미지 기능을 불러오지 못했어요. 화면을 캡처해 주세요');return;}
@@ -274,53 +368,85 @@ function openVideo(p,extraHTML){
 function closeVideo(){const m=document.getElementById('vmodal');if(!m)return;m.classList.remove('on');m.innerHTML='';document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo();});
 
-const store=makeStore('jp6_l3',{info:{},yours:['','',''],qs:{},checks:{}});
+const store=makeStore('jp6_l3',{info:{},yours:['','',''],qs:{},checks:{},ac:{me:{},you:{}}});
 const S=()=>store.s;
-const QS=[['여기는 어디예요?'],['어디에 있어요?'],['어떤 곳이에요?'],['무엇이 유명해요?'],['무엇이 맛있어요?'],['언제 가면 좋아요?'],['왜 이곳을 소개하고 싶어요?']];
+const QS=[['여기는 어디예요?','ここは　どこですか。'],['어디에 있어요?','どこに　ありますか。'],['어떤 곳이에요?','どんな　ところですか。'],['무엇이 유명해요?','なにが　ゆうめいですか。'],['무엇이 맛있어요?','なにが　おいしいですか。'],['언제 가면 좋아요?','いつが　いいですか。'],['왜 이곳을 소개하고 싶어요?','どうして　ここを　しょうかいしたいですか。']];
+const PR={"どこに\u3000ありますか。": "도코니 아리마스카", "どんな\u3000ところですか。": "돈나 토코로데스카", "なにが\u3000ゆうめいですか。": "나니가 유-메-데스카", "なにが\u3000おいしいですか。": "나니가 오이시-데스카", "いつが\u3000いいですか。": "이츠가 이-데스카", "どうして\u3000ここを\u3000しょうかいしたいですか。": "도-시테 코코오 쇼-카이시타이데스카", "ここは\u3000どこですか。": "코코와 도코데스카"};
+const prOf=j=>PR[j]||'';
 const EXP_Q=[
- ['어디에 있어요?','どこに ありますか。','위치를 물어봐요'],
- ['어떤 곳이에요?','どんな ところですか。','특징을 물어봐요'],
- ['무엇이 유명해요?','なにが ゆうめいですか。','볼거리를 물어봐요'],
- ['무엇이 맛있어요?','なにが おいしいですか。','먹거리를 물어봐요'],
- ['언제 가면 좋아요?','いつが いいですか。','추천 계절을 물어봐요'],
- ['왜 이곳을 소개하고 싶어요?','どうして ここを しょうかいしたいですか。','고른 이유를 물어봐요']];
+ ['어디에 있어요?','どこに　ありますか。','위치를 물어봐요'],
+ ['어떤 곳이에요?','どんな　ところですか。','특징을 물어봐요'],
+ ['무엇이 유명해요?','なにが　ゆうめいですか。','볼거리를 물어봐요'],
+ ['무엇이 맛있어요?','なにが　おいしいですか。','먹거리를 물어봐요'],
+ ['언제 가면 좋아요?','いつが　いいですか。','추천 계절을 물어봐요'],
+ ['왜 이곳을 소개하고 싶어요?','どうして　ここを　しょうかいしたいですか。','고른 이유를 물어봐요']];
 let qMode='all';
 function renderExp(){
   document.getElementById('expQ').innerHTML=EXP_Q.map(([ko,ja,k],i)=>`<div class="exp qx"><div class="t">
      <span class="j" style="font-family:inherit">${i+1}. ${ko}</span>
-     <span class="jq ${qMode==='quiz'?'hide':''}" data-i="${i}">${qMode==='quiz'?'👆 눌러서 일본어 확인':ja}</span>
+     <span class="jq ${qMode==='quiz'?'hide':''}" data-i="${i}">${qMode==='quiz'?'👆 눌러서 일본어 확인':ja}</span><span class="pr ${qMode==='quiz'?'hid':''}" data-p="${i}">[${prOf(ja)}]</span>
      <span class="k">${k}</span></div><button class="say" data-say="${ja}" title="일본어 듣기">🔊</button></div>`).join('');
-  document.querySelectorAll('.jq.hide').forEach(el=>el.onclick=()=>{el.textContent=EXP_Q[+el.dataset.i][1];el.classList.remove('hide');});
+  document.querySelectorAll('.jq.hide').forEach(el=>el.onclick=()=>{el.textContent=EXP_Q[+el.dataset.i][1];el.classList.remove('hide');const q=document.querySelector(`.pr[data-p="${el.dataset.i}"]`);if(q)q.classList.remove('hid');fitJa();});
+  setTimeout(fitJa,0);
   document.getElementById('qhint').textContent=qMode==='quiz'?'한국어 질문을 보고 일본어로 말해 본 뒤, 눌러서 정답을 확인해요. 🔊로 발음도 들어 봐요!':'🔊를 눌러 듣고 따라 말해 봐요. 한국어로도, 일본어로도 질문할 수 있어요!';
 }
 document.querySelectorAll('#qmode button').forEach(b=>b.onclick=()=>{qMode=b.dataset.m;document.querySelectorAll('#qmode button').forEach(x=>x.classList.toggle('on',x===b));renderExp();});
+/* 긴 일본어 문장을 한 줄로 맞추기 */
+function fitJa(){document.querySelectorAll('.jq:not(.hide),.pja').forEach(el=>{
+  if(!el.dataset.orig)el.dataset.orig=el.textContent;
+  el.textContent=el.dataset.orig;el.style.fontSize='';el.style.wordSpacing='';el.style.letterSpacing='';el.style.whiteSpace='nowrap';
+  const over=()=>el.scrollWidth>el.clientWidth+1;
+  if(!over())return;
+  el.textContent=el.dataset.orig.replace(/\u3000/g,' ');el.style.wordSpacing='.3em';
+  let fs=parseFloat(getComputedStyle(el).fontSize);
+  while(over()&&fs>10){fs-=0.5;el.style.fontSize=fs+'px';}
+  if(over())el.style.letterSpacing='-.03em';});}
+window.addEventListener('resize',()=>{clearTimeout(fitJa.t);fitJa.t=setTimeout(fitJa,150);});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitJa);
 function renderPicks(){const box=document.getElementById('picks');box.innerHTML='';
   S().yours.forEach((v,i)=>{const used=S().yours.filter((x,j)=>x&&j!==i);const s=document.createElement('select');
     s.innerHTML=`<option value="">— 짝 관광지 ${i+1} —</option>`+PLACES.map(p=>`<option value="${p.id}" ${v===p.id?'selected':''} ${used.includes(p.id)?'disabled':''}>${p.emo} ${p.ja} (${p.ko})</option>`).join('');
-    s.onchange=()=>{S().yours[i]=s.value;store.save();renderPlan();};box.appendChild(s);});}
+    s.onchange=()=>{S().yours[i]=s.value;store.save();renderPlan();setTimeout(fitJa,0);};box.appendChild(s);});}
 function renderPlan(){const box=document.getElementById('plan');box.innerHTML='';
   S().yours.forEach((id,i)=>{const p=byId(id);const d=document.createElement('div');d.className='pp';
     if(!p){d.innerHTML='<div style="color:var(--muted)">위에서 짝의 관광지를 골라 주세요.</div>';box.appendChild(d);return;}
-    const sel=S().qs[i]||[];
+    const sel=(S().qs[i]||[]).filter(n=>n>=3);S().qs[i]=sel;
     d.innerHTML=`<div class="hd"><span class="e">${p.emo}</span><div><span class="jp">${p.ja}</span><small>${p.ko} · ${p.city}</small></div></div>`+
-      QS.slice(2).map(([j],n)=>`<label><input type="checkbox" data-n="${n+2}" ${sel.includes(n+2)?'checked':''}><span>${j}</span></label>`).join('');
+      QS.slice(3).map(([j,ja],n)=>`<label><input type="checkbox" data-n="${n+3}" ${sel.includes(n+3)?'checked':''}><span>${j}<span class="pja">${ja}</span><span class="pr">[${prOf(ja)}]</span></span></label>`).join('');
     d.querySelectorAll('input').forEach(c=>c.onchange=()=>{let a=new Set(S().qs[i]||[]);const n=+c.dataset.n;
       if(c.checked){if(a.size>=2){c.checked=false;toast('질문은 2개씩만 골라요');return;}a.add(n);}else a.delete(n);
       S().qs[i]=[...a].sort();store.save();});
     box.appendChild(d);});
 }
 /* 점검 */
-const CHECKS=['짝의 관광지에 대해 궁금한 점을 질문했다.','짝의 질문에 자료를 보지 않고 대답했다.','짝의 설명을 집중해서 잘 들었다.','역할을 바꿔 두 번 녹음했다.','녹음을 패들렛의 자신의 이름 칸에 올렸다.'];
+const CHECKS=['짝의 관광지에 대해 궁금한 점을 질문했다.','짝의 질문에 자료를 보지 않고 대답했다.','맞장구(うん・そうそう・そうですか・へえ～)를 치며 짝의 설명을 들었다.','내가 가이드가 되어 대답하는 모습을 녹음했다.','녹음을 패들렛의 자신의 이름 칸에 올렸다.'];
 const FACES=[['😀','잘함'],['🙂','보통'],['😥','노력']];
+/* 맞장구 체크 */
+const AC=[['un','うん。','응.','👂 경청','az1','응'],['soso','そうそう。','그래, 맞아.','🤝 동의·공감','az2','소-소-'],['sodesu','そうですか↘','그래요?','💡 이해','az3','소-데스카'],['he','へえ～！','우와!','😲 놀람','az4','헤-!']];
+let acW='me';
+function acData(){S().ac=S().ac||{me:{},you:{}};S().ac[acW]=S().ac[acW]||{};return S().ac[acW];}
+function acTotal(w){const d=(S().ac||{})[w]||{};return AC.reduce((s,a)=>s+(d[a[0]]||0),0);}
+function acKinds(w){const d=(S().ac||{})[w]||{};return AC.filter(a=>(d[a[0]]||0)>0).length;}
+function renderAC(){const d=acData();const me=info(store,'name')||'나',you=info(store,'pname')||'짝';
+  document.getElementById('acgrid').innerHTML=AC.map(([k,ja,ko,tg,c,pr])=>`<div class="acc ${c}"><span class="tg">${tg}</span><div class="ja">${ja}</div><div class="pr">[${pr}]</div><div class="ko">${ko}</div>
+    <div class="cnt"><button data-k="${k}" data-d="-1" aria-label="빼기">−</button><b>${d[k]||0}</b><button data-k="${k}" data-d="1" class="plus" aria-label="더하기">＋</button></div></div>`).join('');
+  document.querySelectorAll('#acgrid [data-k]').forEach(b=>b.onclick=()=>{const v=(d[b.dataset.k]||0)+(+b.dataset.d);d[b.dataset.k]=Math.max(0,Math.min(99,v));store.save();renderAC();});
+  const t=acTotal(acW),kinds=acKinds(acW);const r=document.getElementById('acres');
+  r.className='acres '+(t>=2?'ok':'wait');
+  r.innerHTML=t>=2?`🎉 맞장구 <b>${t}번</b> · <b>${kinds}가지</b> 표현 사용! 미션 성공${kinds>=3?' 👍 다양하게 잘 썼어요!':' · 다음엔 다른 맞장구도 써 봐요!'}`:`맞장구 <b>${t}번</b> 사용 · 미션까지 ${2-t}번 남았어요 (2번 이상)`;}
+['name','pname'].forEach(id=>document.getElementById(id).addEventListener('input',renderAC));
 function renderChecks(){const b=document.getElementById('checks');
   b.innerHTML=CHECKS.map((c,i)=>`<div class="ck"><div class="txt">${i+1}. ${c}</div><div class="faces">${FACES.map(([f,t],j)=>`<button data-c="${i}" data-v="${j}" title="${t}" class="${S().checks[i]===j?'on':''}">${f}</button>`).join('')}</div></div>`).join('');
   b.querySelectorAll('[data-c]').forEach(x=>x.onclick=()=>{S().checks[x.dataset.c]=+x.dataset.v;store.save();renderChecks();});}
 
 document.getElementById('loadBtn').onclick=()=>{const l1=readOther('jp6_l1');
-  if(!l1||!l1.yours){toast('이 태블릿에서 1차시 기록을 찾지 못했어요. 직접 골라 주세요');return;}
+  if(!l1||!(l1.yours||[]).some(Boolean)){toast('이 반·번호로 된 1차시 기록을 찾지 못했어요. 직접 골라 주세요');return;}
   ['cls','no','name','pname'].forEach(id=>{if(l1.info&&l1.info[id]){S().info[id]=l1.info[id];document.getElementById(id).value=l1.info[id];}});
-  S().yours=l1.yours.slice(0,3);store.save();renderPicks();renderPlan();toast('짝의 관광지를 불러왔어요!');};
+  S().yours=l1.yours.slice(0,3);store.save();renderPicks();renderPlan();setTimeout(fitJa,0);toast('짝의 관광지를 불러왔어요!');};
 
+function acSummary(){const line=w=>{const d=(S().ac||{})[w]||{};const parts=AC.filter(a=>(d[a[0]]||0)>0).map(a=>`${a[1]} ${d[a[0]]}`);return parts.length?parts.join(' · '):'-';};
+  const me=esc(info(store,'name')||'나'),you=esc(info(store,'pname')||'짝');
+  return `<div class="acsum"><b>🗣️ 맞장구 체크</b> (내가 듣는 사람일 때)<div><span class="jp">${line('me')}</span> → 총 ${acTotal('me')}번</div></div>`;}
 document.getElementById('mk').onclick=()=>{
   if(!info(store,'name')){toast('이름을 먼저 써 주세요!');document.getElementById('name').focus();return;}
   const places=S().yours.map(id=>byId(id)).filter(Boolean).map(p=>`${p.emo} ${p.ja}`).join(' · ');
@@ -328,11 +454,11 @@ document.getElementById('mk').onclick=()=>{
   document.getElementById('sheetWrap').innerHTML=`<div class="sheet" id="sheet"><div class="top"><div class="tt"><small style="color:var(--purple)">6단원 3차시 · 묻고 답하며 녹음하기</small>🎙️ 나의 점검 카드</div>
     <div class="who"><b>${esc(info(store,'cls'))}반 ${esc(info(store,'no'))}번 ${esc(info(store,'name'))}</b><br>짝: ${esc(info(store,'pname'))}</div></div>
     <div style="font-size:14px"><b>내가 질문한 짝의 관광지:</b> ${places||'-'}</div>
-    <table>${rows}</table>${info(store,'refl')?`<div style="margin-top:10px;font-size:14px"><b>기억에 남는 것:</b> ${esc(info(store,'refl'))}</div>`:''}</div>`;
+    <table>${rows}</table>${acSummary()}${info(store,'refl')?`<div style="margin-top:10px;font-size:14px"><b>기억에 남는 것:</b> ${esc(info(store,'refl'))}</div>`:''}</div>`;
   document.getElementById('dl').hidden=false;document.getElementById('sheet').scrollIntoView({behavior:'smooth',block:'start'});};
 document.getElementById('dl').onclick=()=>{const el=document.getElementById('sheet');if(el)saveImage(el,`6단원3차시_${info(store,'cls')}_${info(store,'no')}_${info(store,'name')}.png`);};
 document.getElementById('reset').onclick=()=>{if(confirm('입력한 내용을 모두 지울까요?')){store.clear();location.reload();}};
-bindBasics(store);renderExp();renderPicks();renderPlan();renderChecks();
+bindBasics(store);renderExp();renderPicks();renderPlan();renderAC();renderChecks();setTimeout(fitJa,50);
 </script>
 </body>
 </html>
